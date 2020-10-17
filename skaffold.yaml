@@ -1,0 +1,41 @@
+apiVersion: skaffold/v2beta9
+kind: Config
+metadata:
+  name: go-ms-starter
+build:
+  local:
+    push: false
+  artifacts:
+    # AUTH
+    - image: auth-http
+      context: auth
+      custom:
+        buildCommand: build.sh auth-http
+        dependencies:
+          ignore: ["dist"]
+          paths: ["."]
+    - image: auth-micro
+      context: auth
+      custom:
+        buildCommand: build.sh auth-micro
+        dependencies:
+          ignore: ["dist"]
+          paths: ["."]
+
+    # EMAIL
+    - image: email-micro
+      context: email
+      custom:
+        buildCommand: build.sh email-micro
+        dependencies:
+          ignore: ["dist"]
+          paths: ["."]
+deploy:
+  kubectl:
+    manifests:
+      - secrets.yaml
+
+      - auth/k8s-http.yaml
+      - auth/k8s-micro.yaml
+
+      - email/k8s-micro.yaml

@@ -1,0 +1,14 @@
+# Build a small image
+FROM scratch
+
+# Copy the built exe from skaffold to the container
+COPY dist/auth-micro /
+
+# Copy the resources to the container
+COPY res res
+
+#Expose the port used by the target
+EXPOSE 4003
+
+# Command to run
+ENTRYPOINT ["/auth-micro"]

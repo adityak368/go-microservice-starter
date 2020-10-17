@@ -1,0 +1,22 @@
+{
+  "ErrorAtServer": "Unknown Error Occured At Server",
+  "InvalidParams": "Invalid Params",
+
+  "EmailNotFound": "Email Does Not Exists",
+  "EmailAlreadyExists": "Email Already Exists",
+  "InvalidEmailPassword": "Invalid Username/Password",
+  "UserCreated": "User Created",
+  "InvalidOldPassword": "Invalid Old Password",
+  "InvalidPasswordResetToken": "Invalid Password Reset Token",
+  "PasswordResetTokenHasExpired": "Password Reset Token Has Expired",
+  "SuccessfullyChangedPassword": "Successfully Changed Password. Please Relogin",
+  "PasswordRecoveryEmailSent": "Password Recovery email sent to your Inbox.",
+  "PasswordRecoveryEmail": "You are receiving this email because you (or someone else) has requested password reset for your account.\n\nPlease click on the following link, or paste this into your browser to complete the process:\n\nhttps://%s.com/reset?t=%s\n\nThis Link is valid only for an hour\nIf you did not request this, please ignore this email and your password will remain unchanged.\n",
+  "PasswordRecoveryEmailSubject": "Your %s account Password Reset",
+  "UserNotFound": "User not found",
+  "InvalidUserID": "Invalid User ID",
+  "AvatarMaxSizeExceeded": "Avatar MaxSize Exceeded",
+  "InvalidAvatar": "Invalid Avatar",
+  "InvalidImage": "Invalid image. Only JPEG and PNG images are allowed",
+  "CouldNotSaveAvatar": "Could not save avatar"
+}

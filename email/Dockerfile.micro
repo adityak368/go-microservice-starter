@@ -1,0 +1,11 @@
+# Build a small image
+FROM scratch
+
+# Copy the built exe from skaffold to the container
+COPY dist/email-micro /
+
+#Expose the port used by the target
+EXPOSE 4001
+
+# Command to run
+ENTRYPOINT ["/email-micro"]

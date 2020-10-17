@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: email-micro-service
+  labels:
+    service: email-micro-service
+spec:
+  type: ClusterIP
+  clusterIP: None
+  selector:
+    app: email-micro
+
+  ports:
+    - name: grpc
+      port: 4001
+      protocol: TCP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-micro-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: email-micro
+  template:
+    metadata:
+      labels:
+        app: email-micro
+    spec:
+      containers:
+        - name: email-micro
+          image: email-micro:latest
+          ports:
+            - containerPort: 4001

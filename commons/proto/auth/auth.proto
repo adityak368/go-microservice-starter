@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package auth;
+
+service Auth {
+	rpc GetUserByEmail(GetUserByEmailRequest) returns (User) {}
+	rpc GetUserById(GetUserByIdRequest) returns (User) {}
+}
+
+message User {
+	string ID = 1;
+	string Name = 2;
+	string Headline = 3;
+	string Contact = 4;
+	string Address = 5;
+	string Email = 6;
+	string AvatarURL = 7;
+	int64 CreatedAt = 8;
+	int64 UpdatedAt = 9;
+}
+
+message GetUserByEmailRequest {
+	string Email = 1;
+}
+
+message GetUserByIdRequest {
+	string UserId = 1;
+}
+
+// User creation event
+message UserCreated {
+	User UserData = 1;
+}
+
+// User update event
+message UserUpdated {
+	User UserData = 1;
+}

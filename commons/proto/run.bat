@@ -1,0 +1,1 @@
+protoc -I . --go_out=. --micro_out=. %1/%1.proto
